@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "URL Tracker",
+  "version": "1.0",
+  "description": "Track visited URLs and display them in a popup.",
+  "permissions": ["storage", "activeTab"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/link.png",
+      "48": "images/link.png",
+      "128": "images/link.png"
+    }
+  },
+  "icons": {
+    "16": "images/link.png",
+    "48": "images/link.png",
+    "128": "images/link.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["storage", "activeTab"],
+  "browser_action": {
+    "default_icon": {
+      "16": "images/link.png",
+      "48": "images/link.png",
+      "128": "images/link.png"
+    },
+    "default_popup": "popup.html"
+  }
+}
