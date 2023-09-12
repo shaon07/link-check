@@ -4,9 +4,48 @@
   <head>
     <title>URL History</title>
   </head>
+
+  <style>
+    body {
+      min-width: 400px;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      list-style-type: none;
+      padding: 0;
+      margin: 5px;
+    }
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 50px;
+      width: 100%;
+      padding: 5px;
+      font-weight: 500;
+      border: 1px solid grey;
+      border-radius: 5px;
+    }
+
+    .remove-button {
+      border: none;
+      padding: 5px 10px;
+      background: red;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+
   <body>
     <h1>Visited URLs</h1>
-    <ul id="url-list"></ul>
+    <div>
+      <ul id="url-list"></ul>
+    </div>
     <script src="popup.js"></script>
   </body>
 </html>

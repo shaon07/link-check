@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
             listItem.textContent = url;
   
             const removeButton = document.createElement("button");
+            removeButton.classList.add("remove-button");
             removeButton.textContent = "Remove";
   
             // Add a click event listener to remove the URL and send a message to content script
