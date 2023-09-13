@@ -39,11 +39,17 @@
       border-radius: 5px;
       cursor: pointer;
     }
+
+    .list-wrapper {
+      height: 200px;
+      overflow: hidden;
+      overflow-y: scroll;
+    }
   </style>
 
   <body>
     <h1>Visited URLs</h1>
-    <div>
+    <div class="list-wrapper">
       <ul id="url-list"></ul>
     </div>
     <script src="popup.js"></script>

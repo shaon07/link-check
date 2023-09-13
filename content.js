@@ -33,7 +33,7 @@ chrome.storage.sync.get("urls", function (data) {
   // Check if the truncated URL is in the list of saved URLs
   visitCount = savedURLs.filter((link) => link === truncatedURL).length;
 
-  if(visitCount > 0){
+  if (visitCount > 0) {
     injectTextContent(visitCount);
   }
 
@@ -72,7 +72,10 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
   if (message.action === "removeVisitedText") {
     const visitedText = document.getElementById("visited-text");
     if (visitedText) {
-      visitedText.remove(); // Remove the visited text from the DOM
+      if(message.url === truncatedURL){
+        visitedText.remove(); // Remove the visited text from the DOM
+      }
+      // visitedText.remove(); // Remove the visited text from the DOM
     }
   }
 });
